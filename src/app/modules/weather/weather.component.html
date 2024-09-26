@@ -1,0 +1,17 @@
+<div class="weather-container">
+  <h2 class="weather-title">Weather Information</h2>
+  <ng-container *ngIf="weatherData$ | async as weatherData">
+    <p class="weather-location">Location: {{ weatherData.location }}</p>
+    <p class="weather-temperature">
+      Temperature: {{ weatherData.temperature.current }}°{{ weatherData.temperature.unit }}
+    </p>
+    <p class="weather-condition">Condition: {{ weatherData.condition }}</p>
+
+    <h3 class="forecast-title">Forecast</h3>
+    <ul class="forecast-list">
+      <li *ngFor="let day of weatherData.forecast" class="forecast-item">
+        {{ day.day }}: High {{ day.temperature.high }}°C, Low {{ day.temperature.low }}°C - {{ day.condition }}
+      </li>
+    </ul>
+  </ng-container>
+</div>

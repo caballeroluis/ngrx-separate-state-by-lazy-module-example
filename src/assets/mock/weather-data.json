@@ -1,0 +1,27 @@
+{
+    "location": "Madrid",
+    "temperature": {
+      "current": 22,
+      "unit": "C 🌡️"
+    },
+    "condition": "Clear ☀️",
+    "forecast": [
+      {
+        "day": "Monday",
+        "temperature": {
+          "high": 25,
+          "low": 18
+        },
+        "condition": "Sunny 🌞"
+      },
+      {
+        "day": "Tuesday",
+        "temperature": {
+          "high": 20,
+          "low": 16
+        },
+        "condition": "Partly Cloudy ⛅"
+      }
+    ]
+  }
+  

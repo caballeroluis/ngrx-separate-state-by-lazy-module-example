@@ -1,0 +1,19 @@
+<header>
+  <div class="header-container">
+    <nav>
+      <ul class="nav-menu">
+        <li><a routerLink="/authentication" routerLinkActive="active">Login</a></li>
+        <li><a routerLink="/weather" routerLinkActive="active">Weather</a></li>
+        <li><a routerLink="/list" routerLinkActive="active">Shopping</a></li>
+      </ul>
+    </nav>
+    <div class="user-info">
+      <button (click)="onLogout()" class="logout-button">Logout</button>
+      <div class="user-initial" [title]="(username$ | async)">
+        {{ (username$ | async)?.charAt(0)?.toUpperCase() }}
+      </div>
+    </div>
+  </div>
+</header>
+
+<router-outlet></router-outlet>

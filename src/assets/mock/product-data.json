@@ -1,0 +1,15 @@
+{
+    "products": [
+        { "name": "Melon", "image": "🍈" },
+        { "name": "Watermelon", "image": "🍉" },
+        { "name": "Orange", "image": "🍊" },
+        { "name": "Lemon", "image": "🍋" },
+        { "name": "Banana", "image": "🍌" },
+        { "name": "Pineapple", "image": "🍍" },
+        { "name": "Apple", "image": "🍎" },
+        { "name": "Pear", "image": "🍐" },
+        { "name": "Peach", "image": "🍑" },
+        { "name": "Strawberry", "image": "🍓" },
+        { "name": "Kiwi", "image": "🥝" }
+    ]
+}

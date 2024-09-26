@@ -1,0 +1,23 @@
+<div class="shopping-list-container">
+  <h2 class="shopping-list-title">Products List</h2>
+  <ng-container *ngIf="productsData$ | async as productsData">
+    <label for="productSelect" class="product-label">Choose a product:</label>
+    <select id="productSelect" class="product-select" (change)="onProductSelect($event)">
+      <option *ngFor="let product of productsData.products" [value]="product.name">
+        {{ product.name }}
+      </option>
+    </select>
+    <button class="add-product-button" (click)="addProduct()">Add to List</button>
+  </ng-container>
+
+  <h3 class="your-list-title">Your Shopping List</h3>
+  <ul class="shopping-list">
+    <li *ngFor="let product of shoppingList$ | async" 
+        [ngClass]="{ 'fade-out': productToRemove === product }"
+        class="shopping-list-item">
+      <span class="product-image">{{ product.image }}</span> 
+      {{ product.name }}
+      <button class="remove-product-button" (click)="removeProduct(product)">❌</button>
+    </li>
+  </ul>
+</div>

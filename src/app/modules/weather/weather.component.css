@@ -1,0 +1,44 @@
+.weather-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.weather-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.weather-location,
+.weather-temperature,
+.weather-condition {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #555;
+}
+
+.forecast-title {
+    font-size: 20px;
+    margin: 15px 0;
+    color: #333;
+}
+
+.forecast-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.forecast-item {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #444;
+    transition: background-color 0.3s;
+}
+
+.forecast-item:hover {
+    background-color: #f9f9f9;
+}
