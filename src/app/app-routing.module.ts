@@ -13,6 +13,7 @@ const routes: Routes = [
     path: 'list',
     loadChildren: () => import('./modules/list/list.module').then((m) => m.ListModule),
   },
+  { path: 'new', loadChildren: () => import('./modules/new/new.module').then(m => m.NewModule) },
 ];
 
 @NgModule({
