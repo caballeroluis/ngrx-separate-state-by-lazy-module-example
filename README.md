@@ -26,6 +26,7 @@ Anticipando un crecimiento masivo, tomé decisiones para blindar el núcleo del 
 *   **A. NgRx como Única Fuente de Verdad:** Implementé NgRx para garantizar que el flujo de datos fuera predecible. Si mañana cambiaba la librería de componentes, la lógica de negocio permanecería intacta.
 *   **B. Estrategia "Double-Lazy" (Rendimiento Extremo):** Diseñé un sistema donde tanto el código JS como el Estado Redux (reducers/effects) solo se inyectan en el Store al activar la ruta, manteniendo la memoria limpia.
 *   **C. Caché Reactiva (Local Storage):** Dada la complejidad de las consultas, implementé hidratación automática con `ngrx-store-localstorage`. Si el usuario refresca la página, su contexto de datos se recupera al instante sin re-ejecutar peticiones pesadas al servidor.
+*   **D. Desacoplamiento Organizativo (Aislamiento de Equipos): Al estructurar el Store mediante forFeature dinámicos, cada equipo de desarrollo puede trabajar, crear reducers y gestionar sus datos de forma 100% aislada en su propio módulo. Se eliminan por completo los conflictos de integración (merge conflicts) en un Store global único, permitiendo una escalabilidad horizontal real del equipo de ingeniería.
 
 ## 🛠️ 3. ¿Para qué te sirve este repositorio?
 Si eres desarrollador Angular, este proyecto te resultará útil como referencia técnica para implementar:
@@ -131,6 +132,7 @@ A continuación, se detalla cómo esta arquitectura impacta positivamente en el 
 | **Memoria RAM (Store)** | El estado global crece linealmente con cada módulo. | El Store solo crece con los módulos visitados. | **Ahorro de memoria en sesiones largas.** |
 | **Hidratación (Storage)** | Se procesan todas las claves del LocalStorage al arrancar. | Solo se hidrata la "parcela" de datos del módulo activo. | **TBT (Total Blocking Time) reducido.** |
 | **Escalabilidad** | El rendimiento se degrada al añadir 50+ módulos. | Rendimiento constante ($O(1)$) independientemente del número de módulos. | **Escalabilidad Horizontal.** |
+| **Organización de Equipos** | Los desarrolladores se pisan el código y generan conflictos de integración (*merge conflicts*) en el Store global. | Cada equipo gestiona su estado local de forma independiente antes de unificarse dinámicamente en caliente. | **Desacoplamiento Organizativo.** Cero bloqueos entre equipos y escalabilidad horizontal de la plantilla técnica. |
 
 > [!TIP]
 > **Conclusión técnica:** Mientras que una arquitectura estándar penaliza al usuario desde el segundo 0, este modelo garantiza que el coste de computación sea proporcional al uso real que se hace de la aplicación.
